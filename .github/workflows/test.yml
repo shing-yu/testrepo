@@ -1,0 +1,36 @@
+
+name: Test
+
+on: workflow_dispatch
+
+jobs:
+  build:
+    name: Test
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Check Flutter
+        run: flutter --version || echo "Flutter not installed"
+
+      - name: Check Dart
+        run: dart --version || echo "Dart not installed"
+
+      - name: Check Rust
+        run: rustc --version || echo "Rust not installed"
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.22.0'
+
+      - name: Check Flutter Again
+        run: flutter --version || echo "Flutter not installed"
+
+      - name: Check Dart Again
+        run: dart --version || echo "Dart not installed"
+
+      - name: Check Rust Again
+        run: rustc --version || echo "Rust not installed"

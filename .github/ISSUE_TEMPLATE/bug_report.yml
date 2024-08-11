@@ -23,9 +23,9 @@ body:
   - type: input
     id: version
     attributes:
-      label: 版本号
-      description: 问题出现的版本号
-      placeholder: 输入版本号
+      label: 版本
+      description: 问题出现的版本
+      placeholder: 输入版本
     validations:
       required: true
 
